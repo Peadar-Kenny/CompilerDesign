@@ -53,7 +53,7 @@
 
 %type FUNC
 
-%nonassoc "not" "-"
+%nonassoc "not" 
 %left "*" "/" "mod"
 %left "+" "-"
 %left "==" "<>" "<" ">" "<=" ">="
