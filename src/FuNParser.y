@@ -14,6 +14,7 @@
 }
 %code {
   public static void main(String[] args) throws IOException {
+   FuNLexer lexer = new FuNLexer(System.in);
    FuNParser parser = new FuNParser(); 
    if (!parser.parse())
    System.exit(1);
