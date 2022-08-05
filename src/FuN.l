@@ -1,4 +1,4 @@
-package fun;
+package FuN;
 
 import java.io.*;
 import java.util.*;
@@ -68,30 +68,30 @@ CONDITIONAL = ({IF} | {THEN} | {ELSE} | {FOR} | {RETURN})
 %%
 
 <YYINITIAL>{ 
-{LPAREN} {return new Token(fun.LPAREN, yytext());}
-{RPAREN} {return new Token(fun.RPAREN, yytext());}
-{EQUAL} {return new Token(fun.EQUAL, yytext());}
-{TANGLE} {return new Token(fun.TANGLE, yytext());}
-{LANGLE} {return new Token(fun.LANGLE, yytext());}
-{RANGLE} {return new Token(fun.RANGLE, yytext());}
-{LANGLEEQ} {return new Token(fun.LANGLEEQ, yytext());}
-{RANGLEEQ} {return new Token(fun.RANGLEEQ, yytext());}
-{PLUS} {return new Token(fun.PLUS, yytext());}
-{SUB} {return new Token(fun.SUB, yytext());}
-{MULTIPLY} {return new Token(fun.MULTIPLY, yytext());}
-{DIVIDE} {return new Token(fun.DIVIDE, yytext());}
-{MODULO} {return new Token(fun.MODULO, yytext());}
-{AND} {return new Token(fun.AND, yytext());}
-{OR} {return new Token(fun.OR, yytext());}
-{FUN} {return new Token(fun.FUN, yytext());}
-{LET} {return new Token(fun.LET, yytext());}
-{REC} {return new Token(fun.REC, yytext());}
-{IN} {return new Token(fun.IN, yytext());}
-{TRUE} {return new Token(fun.TRUE, yytext());}
-{FALSE} {return new Token(fun.FALSE, yytext());}
-{NOT} {return new Token(fun.NOT, yytext());}
-{NUMBER} {return new Token(fun.NUMBER, yytext());}
-{IDENTIFIER} {return new Token (fun.IDENTIFIER, yytext());}
+{LPAREN} {return new Token(FuN.LPAREN, yytext());}
+{RPAREN} {return new Token(FuN.RPAREN, yytext());}
+{EQUAL} {return new Token(FuN.EQUAL, yytext());}
+{TANGLE} {return new Token(FuN.TANGLE, yytext());}
+{LANGLE} {return new Token(FuN.LANGLE, yytext());}
+{RANGLE} {return new Token(FuN.RANGLE, yytext());}
+{LANGLEEQ} {return new Token(FuN.LANGLEEQ, yytext());}
+{RANGLEEQ} {return new Token(FuN.RANGLEEQ, yytext());}
+{PLUS} {return new Token(FuN.PLUS, yytext());}
+{SUB} {return new Token(FuN.SUB, yytext());}
+{MULTIPLY} {return new Token(FuN.MULTIPLY, yytext());}
+{DIVIDE} {return new Token(FuN.DIVIDE, yytext());}
+{MODULO} {return new Token(FuN.MODULO, yytext());}
+{AND} {return new Token(FuN.AND, yytext());}
+{OR} {return new Token(FuN.OR, yytext());}
+{FUN} {return new Token(FuN.FUN, yytext());}
+{LET} {return new Token(FuN.LET, yytext());}
+{REC} {return new Token(FuN.REC, yytext());}
+{IN} {return new Token(FuN.IN, yytext());}
+{TRUE} {return new Token(FuN.TRUE, yytext());}
+{FALSE} {return new Token(FuN.FALSE, yytext());}
+{NOT} {return new Token(FuN.NOT, yytext());}
+{NUMBER} {return new Token(FuN.NUMBER, yytext());}
+{IDENTIFIER} {return new Token (FuN.IDENTIFIER, yytext());}
 {COMMENT} {}
 
 {WS}  {}
