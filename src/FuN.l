@@ -7,7 +7,7 @@ import java.lang.*;
 class Token {
     String value;
     int token;
-    Token ( int token, String value,){
+    Token ( int token, String value){
         this.value = value;
         this.token = token;
     }
@@ -20,16 +20,15 @@ class Token {
     public Integer parseInt() {
         return Integer.parseInt(this.value);
     }
-    public int tokenToInt(){
-        return this.token.ordinal();
-    }
+   
 }
 
 %%
 
 %unicode
+%standalone
 %{
-    StringBuffer string = new StringBuffer();
+    StringBuffer stringbuffer = new StringBuffer();
     List<Token> tokens = new ArrayList<Token>();
 %}
 
@@ -69,30 +68,30 @@ CONDITIONAL = ({IF} | {THEN} | {ELSE} | {FOR} | {RETURN})
 %%
 
 <YYINITIAL>{ 
-{LPAREN} {return new Token(FuNLexer.LPAREN, yytext());}
-{RPAREN} {return new Token(FuNLexer.RPAREN, yytext());}
-{EQUAL} {return new Token(FuNLexer.EQUAL, yytext());}
-{TANGLE} {return new Token(FuNLexer.TANGLE, yytext());}
-{LANGLE} {return new Token(FuNLexer.LANGLE, yytext());}
-{RANGLE} {return new Token(FuNLexer.RANGLE, yytext());}
-{LANGLEEQ} {return new Token(FuNLexer.LANGLEEQ, yytext());}
-{RANGLEEQ} {return new Token(FuNLexer.RANGLEEQ, yytext());}
-{PLUS} {return new Token(FuNLexer.PLUS, yytext());}
-{SUB} {return new Token(FuNLexer.SUB, yytext());}
-{MULTIPLY} {return new Token(FuNLexer.MULTIPLY, yytext());}
-{DIVIDE} {return new Token(FuNLexer.DIVIDE, yytext());}
-{MODULO} {return new Token(FuNLexer.MODULO, yytext());}
-{AND} {return new Token(FuNLexer.AND, yytext());}
-{OR} {return new Token(FuNLexer.OR, yytext());}
-{FUN} {return new Token(FuNLexer.FUN, yytext());}
-{LET} {return new Token(FuNLexer.LET, yytext());}
-{REC} {return new Token(FuNLexer.REC, yytext());}
-{IN} {return new Token(FuNLexer.IN, yytext());}
-{TRUE} {return new Token(FuNLexer.TRUE, yytext());}
-{FALSE} {return new Token(FuNLexer.FALSE, yytext());}
-{NOT} {return new Token(FuNLexer.NOT, yytext());}
-{NUMBER} {return new Token(FuNLexer.NUMBER, yytext());}
-{IDENTIFIER} {return new Token (FuNLexer.IDENTIFIER, yytext());}
+{LPAREN} {return new Token(FuN.LPAREN, yytext());}
+{RPAREN} {return new Token(FuN.RPAREN, yytext());}
+{EQUAL} {return new Token(FuN.EQUAL, yytext());}
+{TANGLE} {return new Token(FuN.TANGLE, yytext());}
+{LANGLE} {return new Token(FuN.LANGLE, yytext());}
+{RANGLE} {return new Token(FuN.RANGLE, yytext());}
+{LANGLEEQ} {return new Token(FuN.LANGLEEQ, yytext());}
+{RANGLEEQ} {return new Token(FuN.RANGLEEQ, yytext());}
+{PLUS} {return new Token(FuN.PLUS, yytext());}
+{SUB} {return new Token(FuN.SUB, yytext());}
+{MULTIPLY} {return new Token(FuN.MULTIPLY, yytext());}
+{DIVIDE} {return new Token(FuN.DIVIDE, yytext());}
+{MODULO} {return new Token(FuN.MODULO, yytext());}
+{AND} {return new Token(FuN.AND, yytext());}
+{OR} {return new Token(FuN.OR, yytext());}
+{FUN} {return new Token(FuN.FUN, yytext());}
+{LET} {return new Token(FuN.LET, yytext());}
+{REC} {return new Token(FuN.REC, yytext());}
+{IN} {return new Token(FuN.IN, yytext());}
+{TRUE} {return new Token(FuN.TRUE, yytext());}
+{FALSE} {return new Token(FuN.FALSE, yytext());}
+{NOT} {return new Token(FuN.NOT, yytext());}
+{NUMBER} {return new Token(FuN.NUMBER, yytext());}
+{IDENTIFIER} {return new Token (FuN.IDENTIFIER, yytext());}
 {COMMENT} {}
 
 {WS}  {}
