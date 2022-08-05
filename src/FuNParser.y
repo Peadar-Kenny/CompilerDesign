@@ -74,7 +74,7 @@ exp:
   NUMBER                { $$ = $1; }
 | exp EQUAL exp
   {
-    $$ = ($1 = $2;)
+    $$ = ($1 = $2);
   }
 | exp PLUS exp        { $$ = $1 + $3;  }
 | exp SUB exp        { $$ = $1 - $3;  }
