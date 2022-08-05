@@ -1,4 +1,9 @@
 %language "Java"
+%define api.package { FuN }
+%define api.parser.class { FuNParser }
+%define api.value.type { Token }
+%define api.parser.public
+%define parse.error verbose
 %code imports {
   import java.io.BufferedReader;
   import java.io.IOException;
