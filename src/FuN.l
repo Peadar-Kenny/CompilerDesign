@@ -28,9 +28,9 @@ class Token {
 %%
 
 %unicode
-%{
+/*{
     StringBuffer stringbuffer = new StringBuffer();
-    %}
+ %}*/
 
 COMMENT = "(*" .+ "*)"
 LPAREN = "("
