@@ -65,6 +65,8 @@ CHAR = [a-zA-Z0-9_]
 IDENTIFIER = [A-Za-z] {CHAR}*
 CONDITIONAL = ({IF} | {THEN} | {ELSE} | {FOR} | {RETURN})
 
+%type Token
+
 %%
 
 <YYINITIAL>{ 
