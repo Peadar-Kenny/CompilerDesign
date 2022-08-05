@@ -57,6 +57,10 @@
 %token CONDITIONAL
 
 %type FUNC
+%type APPFUNC
+%type LETFUNC
+%type LETRECFUNC
+%type CONDITIONALEXP
 
 %nonassoc "not" 
 %left "*" "/" "mod"
@@ -71,24 +75,47 @@
 %nonassoc "in"
 
 %%
-FUNC: IDENTIFIER "->" exp {$$ = 3 ;}
-| IDENTIFIER "->" FUN {$$ = 3;}
-// | LPAREN IDENTIFIER "->" FUN IDENTIFIER "->" exp RPAREN {$$;}
 
+input:
+| FUNC {}
+| LETFUNC {}
+;
+
+FUNC: IDENTIFIER "->" exp {$$ = 3 ;}
+| IDENTIFIER "->" FUNC {$$ = 3;}
+| APPFUNC
+;
+APPFUNC:
+ LPAREN IDENTIFIER "->" FUN IDENTIFIER "->" exp RPAREN {$$ = 1;}
+;
+LETFUNC:
+LET IDENTIFIER EQUAL exp IN exp {$$ = $2 = $5;}
+| LETRECFUNC
+;
+
+LETRECFUNC: 
+LET REC IDENTIFIER IDENTIFIER EQUAL exp IN exp {$$ = 1;}
+| LET REC FUNC FUNC exp IN LETRECFUNC {$$ = 2;}
+;
+
+CONDITIONALEXP:
+CONDITIONAL exp THEN exp {$$ = 2;}
+| CONDITIONAL exp THEN exp ELSE exp
 exp:
   NUMBER                { $$ = $1; }
 | exp EQUAL exp
   {
     $$ = ($1 = $2);
   }
-// | exp "+" exp        { $$ = $1 + $3;  }
-// | exp SUB exp        { $$ = $1 - $3;  }
-// | exp MULTIPLY exp        { $$ = $1 * $3;  }
-// | exp DIVIDE exp        { $$ = $1 / $3;  }
-// | /* SUB exp  %prec NEG { $$ = -$2; } */
-| LPAREN exp RPAREN        { $$ = $2; }
+| exp "+" exp        { $$ = $1 + $3;  }
+| exp SUB exp        { $$ = $1 - $3;  }
+| exp MULTIPLY exp        { $$ = $1 * $3; }
+| exp DIVIDE exp        { $$ = $1 / $3;  }
+| SUB exp  %prec NEG { $$ = -$2; } 
+| LPAREN exp RPAREN        { $$ = 2; }
 | LPAREN error RPAREN      { $$ = 1111; }
 | "-" error          { $$ = 0; return YYERROR; }
+| NOT exp {$$ = !$1}
 ;
 
 
