@@ -81,7 +81,7 @@ exp:
   {
     $$ = ($1 = $2);
   }
-| exp "+" exp        { $$ = $1 + $3;  }
+| exp "+" exp        { $$ = $1.parseInt() + $3;  }
 | exp SUB exp        { $$ = $1 - $3;  }
 | exp MULTIPLY exp        { $$ = $1 * $3;  }
 | exp DIVIDE exp        { $$ = $1 / $3;  }
