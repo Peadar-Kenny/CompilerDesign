@@ -73,7 +73,7 @@
 %%
 FUNC: IDENTIFIER "->" exp {$$ = 3 ;}
 | IDENTIFIER "->" FUN {$$ = 3;}
-| LPAREN IDENTIFIER "->" FUN IDENTIFIER "->" exp RPAREN {$$}
+| LPAREN IDENTIFIER "->" FUN IDENTIFIER "->" exp RPAREN {$$;}
 
 exp:
   NUMBER                { $$ = $1; }
