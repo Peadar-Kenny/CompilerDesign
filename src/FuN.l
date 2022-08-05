@@ -74,7 +74,7 @@ CONDITIONAL = ({IF} | {THEN} | {ELSE} | {FOR} | {RETURN})
 %%
 
 <YYINITIAL>{ 
-{LPAREN} {System.out.println((yytext()));tokens.add(newToken(Yylex.LPAREN, yytext()));}
+{LPAREN} {System.out.println((yytext()));tokens.add(new Token(FuN.LPAREN, yytext()));}
 {RPAREN} {System.out.println((yytext()));tokens.add(new Token(FuN.RPAREN, yytext()));}
 {EQUAL} {System.out.println((yytext()));tokens.add(new Token(FuN.EQUAL, yytext()));}
 {TANGLE} {System.out.println((yytext()));tokens.add(new Token(FuN.TANGLE, yytext()));}

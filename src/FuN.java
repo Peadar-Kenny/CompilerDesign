@@ -7,30 +7,14 @@ package FuN;
 import java.io.*;
 import java.util.*;
 import java.lang.*;
+import java_cup.runtime.*;
 
-class Token {
-    String value;
-    Object token;
-    public Token ( Object token, String value){
-        this.value = value;
-        this.token = token;
-    }
-    public String toString() {
-        return String.format("%s %s", token, value);
-    }
-    public Object value(){
-        return this.value;
-    }
-    public Integer parseInt() {
-        return Integer.parseInt(this.value);
-    }
-   
-}
+
 
 
 // See https://github.com/jflex-de/jflex/issues/222
 @SuppressWarnings("FallThrough")
-class Lexer implements java_cup.runtime.Scanner {
+class FuN implements java_cup.runtime.Scanner {
 
   /** This character denotes the end of file. */
   public static final int YYEOF = -1;
@@ -333,6 +317,25 @@ class Lexer implements java_cup.runtime.Scanner {
   /* user code: */
     StringBuffer stringbuffer = new StringBuffer();
     List<Token> tokens = new ArrayList<Token>();
+    
+class Token {
+    String value;
+    Object token;
+    public Token ( Object token, String value){
+        this.value = value;
+        this.token = token;
+    }
+    public String toString() {
+        return String.format("%s %s", token, value);
+    }
+    public Object value(){
+        return this.value;
+    }
+    public Integer parseInt() {
+        return Integer.parseInt(this.value);
+    }
+   
+}
 
 
   /**
@@ -340,7 +343,7 @@ class Lexer implements java_cup.runtime.Scanner {
    *
    * @param   in  the java.io.Reader to read input from.
    */
-  Lexer(java.io.Reader in) {
+  FuN(java.io.Reader in) {
     this.zzReader = in;
   }
 
@@ -831,7 +834,7 @@ class Lexer implements java_cup.runtime.Scanner {
    */
   public static void main(String[] argv) {
     if (argv.length == 0) {
-      System.out.println("Usage : java Lexer [ --encoding <name> ] <inputfile(s)>");
+      System.out.println("Usage : java FuN [ --encoding <name> ] <inputfile(s)>");
     }
     else {
       int firstFilePos = 0;
@@ -848,11 +851,11 @@ class Lexer implements java_cup.runtime.Scanner {
         }
       }
       for (int i = firstFilePos; i < argv.length; i++) {
-        Lexer scanner = null;
+        FuN scanner = null;
         try {
           java.io.FileInputStream stream = new java.io.FileInputStream(argv[i]);
           java.io.Reader reader = new java.io.InputStreamReader(stream, encodingName);
-          scanner = new Lexer(reader);
+          scanner = new FuN(reader);
           while ( !scanner.zzAtEOF ) scanner.next_token();
         }
         catch (java.io.FileNotFoundException e) {
