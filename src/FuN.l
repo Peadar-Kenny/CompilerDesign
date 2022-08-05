@@ -7,7 +7,7 @@ import java.lang.*;
 class Token {
     String value;
     int token;
-    Token (String value, int token){
+    Token ( int token, String value,){
         this.value = value;
         this.token = token;
     }
@@ -28,9 +28,10 @@ class Token {
 %%
 
 %unicode
-/*{
-    StringBuffer stringbuffer = new StringBuffer();
- %}*/
+%{
+    StringBuffer string = new StringBuffer();
+    List<Token> tokens = new ArrayList<Token>();
+%}
 
 COMMENT = "(*" .+ "*)"
 LPAREN = "("
