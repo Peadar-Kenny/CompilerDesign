@@ -101,6 +101,7 @@ LET REC IDENTIFIER IDENTIFIER EQUAL exp IN exp {$$ = 1;}
 CONDITIONALEXP:
 CONDITIONAL exp THEN exp {$$ = 2;}
 | CONDITIONAL exp THEN exp ELSE exp
+;
 exp:
   NUMBER                { $$ = $1; }
 | exp EQUAL exp
