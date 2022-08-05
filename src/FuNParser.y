@@ -17,7 +17,7 @@
 }
 
 
-%token
+
 %token COMMENT 
 %token LPAREN 
 %token RPAREN 
@@ -34,7 +34,7 @@
 %token MODULO 
 %token AND 
 %token OR 
--- %token FUN 
+%token FUN 
 %token IF 
 %token THEN
 %token ELSE 
