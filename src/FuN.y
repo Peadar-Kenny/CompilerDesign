@@ -116,7 +116,7 @@ exp:
 | LPAREN exp RPAREN        { $$ = 2; }
 | LPAREN error RPAREN      { $$ = 1111; }
 | "-" error          { $$ = 0; return YYERROR; }
-| NOT exp {$$ = !$1}
+| NOT exp {$$ = !$1;}
 ;
 
 
