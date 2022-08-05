@@ -1,7 +1,6 @@
 %language "Java"
 %define api.prefix {FuN}
-%define api.parser.class { FuNParser }
-%define api.value.type { Token }
+%define api.parser.class { FuN }
 %define api.parser.public
 %define parse.error verbose
 %code imports {
@@ -16,7 +15,7 @@
 %code {
   public static void main(String[] args) throws IOException {
    FuNLexer lexer = new FuNLexer(System.in);
-   FuNParser parser = new FuNParser(); 
+   FuN parser = new FuN(); 
    if (!parser.parse())
    System.exit(1);
   }
