@@ -64,31 +64,31 @@ CONDITIONAL = ({IF} | {THEN} | {ELSE} | {FOR} | {RETURN})
 %%
 
 <YYINITIAL>{ 
-{LPAREN} {return(LPAREN)}
-{RPAREN} {return(RPAREN)}
-{EQUAL} {return(EQUAL)}
-{TANGLE} {return(TANGLE)}
-{LANGLE} {return(LANGLE)}
-{RANGLE} {return(RANGLE)}
-{LANGLEEQ} {return(LANGLEEQ)}
-{RANGLEEQ} {return(RANGLEEQ)}
-{PLUS} {return(PLUS)}
-{SUB} {return(SUB)}
-{MULTIPLY} {return(MULTIPLY)}
-{DIVIDE} {return(DIVIDE)}
-{MODULO} {return(MODULO)}
-{AND} {return(AND)}
-{OR} {return(OR)}
-{FUN} {return(FUN)}
-{LET} {return(LET)}
-{REC} {return(REC)}
-{IN} {return(IN)}
-{TRUE} {return(TRUE)}
-{FALSE} {return(FALSE)}
-{NOT} {return(NOT)}
-{NUMBER} {return(NUMBER)}
-{IDENTIFIER} {return IDENTIFIER}
+{LPAREN} {return(LPAREN);}
+{RPAREN} {return(RPAREN);}
+{EQUAL} {return(EQUAL);}
+{TANGLE} {return(TANGLE);}
+{LANGLE} {return(LANGLE);}
+{RANGLE} {return(RANGLE);}
+{LANGLEEQ} {return(LANGLEEQ);}
+{RANGLEEQ} {return(RANGLEEQ);}
+{PLUS} {return(PLUS);}
+{SUB} {return(SUB);}
+{MULTIPLY} {return(MULTIPLY);}
+{DIVIDE} {return(DIVIDE);}
+{MODULO} {return(MODULO);}
+{AND} {return(AND);}
+{OR} {return(OR);}
+{FUN} {return(FUN);}
+{LET} {return(LET);}
+{REC} {return(REC);}
+{IN} {return(IN);}
+{TRUE} {return(TRUE);}
+{FALSE} {return(FALSE);}
+{NOT} {return(NOT);}
+{NUMBER} {return(NUMBER);}
+{IDENTIFIER} {return IDENTIFIER;}
 {COMMENT} {}
 
-{WS} return {}
+{WS}  {}
 }
