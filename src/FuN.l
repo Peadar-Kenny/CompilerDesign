@@ -3,7 +3,19 @@ package FuN;
 import java.io.*;
 import java.util.*;
 import java.lang.*;
+import java_cup.runtime.*;
 
+
+
+%%
+%class FuN
+%cup
+%unicode
+%standalone
+%{
+    StringBuffer stringbuffer = new StringBuffer();
+    List<Token> tokens = new ArrayList<Token>();
+    
 class Token {
     String value;
     Object token;
@@ -22,14 +34,6 @@ class Token {
     }
    
 }
-
-%%
-%class Lexer
-%unicode
-%standalone
-%{
-    StringBuffer stringbuffer = new StringBuffer();
-    List<Token> tokens = new ArrayList<Token>();
 %}
 
 COMMENT = "(*" .+ "*)"
