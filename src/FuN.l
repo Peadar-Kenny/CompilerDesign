@@ -1,4 +1,4 @@
-/*package FuN;
+package FuN;
 
 import java.io.*;
 import java.util.*;
@@ -24,7 +24,7 @@ class Token {
         return this.token.ordinal();
     }
 }
-*/
+
 %%
 %public
 %standalone
