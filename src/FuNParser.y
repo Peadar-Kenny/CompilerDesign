@@ -66,8 +66,8 @@
 %nonassoc "in"
 
 %%
-FUNC: ID "->" exp {$$ = $4 }
-| ID "->" FUN {$$ = $3}
+FUNC: IDENTIFIER "->" exp {$$ = $4 }
+| IDENTIFIER "->" FUN {$$ = $3}
 | 
 
 exp:
