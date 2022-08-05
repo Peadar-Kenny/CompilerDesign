@@ -94,7 +94,7 @@ exp:
 
 
 %%
-class FuNLexer implements FuNParser.Lexer {
+class FuNLexer implements FuN.Lexer {
  InputStreamReader it;
  Yylex yylex;
  public FuNLexer(InputStream is){
@@ -112,7 +112,7 @@ class FuNLexer implements FuNParser.Lexer {
  return yylval;
  }
  @Override
- public int yylex () throws IOException{
+ public  yylex () throws IOException{
  // Returns the next token. Here we get the next Token from the Lexer
  return yylex.yylex();
  }
