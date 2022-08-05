@@ -1,3 +1,5 @@
 Yylex.java
 Yylex.java~
 *.class
+*.java
+.vscode
