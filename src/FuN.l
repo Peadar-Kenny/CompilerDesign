@@ -25,7 +25,6 @@ class Token {
 
 %%
 %class Lexer
-%cup
 %unicode
 %standalone
 %{
