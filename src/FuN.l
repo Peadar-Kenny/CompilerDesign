@@ -29,7 +29,7 @@ class Token {
 
 %unicode
 %{
-    StringBuffer stringbuffer = new StringBuffer()
+    StringBuffer stringbuffer = new StringBuffer();
     %}
 
 COMMENT = "(*" .+ "*)"
