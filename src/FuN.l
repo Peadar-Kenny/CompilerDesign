@@ -24,6 +24,10 @@ class Token {
         return this.token.ordinal()
     }
 }
+
+%%
+%unicode
+
 COMMENT = "(*" .+ "*)"
 LPAREN = "("
 RPAREN = ")"
@@ -58,12 +62,12 @@ IDENTIFIER = [A-Za-z] {CHAR}*
 CONDITIONAL = ({IF} | {THEN} | {ELSE} | {FOR} | {RETURN})
 
 %%
-%%
+
 <YYINITIAL>{ 
 {LPAREN} {return(LPAREN)}
 {RPAREN} {return(RPAREN)}
-{EQUAL}{return(EQUAL)}
-{TANGLE}{return(TANGLE)}
+{EQUAL} {return(EQUAL)}
+{TANGLE} {return(TANGLE)}
 {LANGLE} {return(LANGLE)}
 {RANGLE} {return(RANGLE)}
 {LANGLEEQ} {return(LANGLEEQ)}
@@ -78,7 +82,7 @@ CONDITIONAL = ({IF} | {THEN} | {ELSE} | {FOR} | {RETURN})
 {FUN} {return(FUN)}
 {LET} {return(LET)}
 {REC} {return(REC)}
-{IN}{return(IN)}
+{IN} {return(IN)}
 {TRUE} {return(TRUE)}
 {FALSE} {return(FALSE)}
 {NOT} {return(NOT)}
@@ -88,5 +92,3 @@ CONDITIONAL = ({IF} | {THEN} | {ELSE} | {FOR} | {RETURN})
 
 {WS} return {}
 }
-
-int yywrap(){}
