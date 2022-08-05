@@ -73,7 +73,7 @@
 %%
 FUNC: IDENTIFIER "->" exp {$$ = 3 ;}
 | IDENTIFIER "->" FUN {$$ = 3;}
-| 
+| LPAREN IDENTIFIER "->" FUN IDENTIFIER "->" exp RPAREN {$$}
 
 exp:
   NUMBER                { $$ = $1; }
@@ -81,11 +81,11 @@ exp:
   {
     $$ = ($1 = $2);
   }
-| exp "+" exp        { $$ = $1.parseInt() + $3;  }
-| exp SUB exp        { $$ = $1 - $3;  }
-| exp MULTIPLY exp        { $$ = $1 * $3;  }
-| exp DIVIDE exp        { $$ = $1 / $3;  }
-| /* SUB exp  %prec NEG { $$ = -$2; } */
+// | exp "+" exp        { $$ = $1 + $3;  }
+// | exp SUB exp        { $$ = $1 - $3;  }
+// | exp MULTIPLY exp        { $$ = $1 * $3;  }
+// | exp DIVIDE exp        { $$ = $1 / $3;  }
+// | /* SUB exp  %prec NEG { $$ = -$2; } */
 | LPAREN exp RPAREN        { $$ = $2; }
 | LPAREN error RPAREN      { $$ = 1111; }
 | "-" error          { $$ = 0; return YYERROR; }
