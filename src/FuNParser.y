@@ -51,7 +51,7 @@
 %token IDENTIFIER 
 %token CONDITIONAL
 
-%type FUN
+%type FUNC
 
 %nonassoc "not" "-"
 %left "*" "/" "mod"
@@ -66,7 +66,7 @@
 %nonassoc "in"
 
 %%
-FUN: ID "->" exp {$$ = $4 }
+FUNC: ID "->" exp {$$ = $4 }
 | ID "->" FUN {$$ = $3}
 | 
 
