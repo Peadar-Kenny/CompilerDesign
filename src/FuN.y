@@ -96,7 +96,7 @@ exp:
 %%
 class FuNLexer implements FuN.Lexer {
  InputStreamReader it;
- Yylex yylex;
+ FuN yylex;
  public FuNLexer(InputStream is){
  it = new InputStreamReader(is);
  yylex = new Yylex(it);
