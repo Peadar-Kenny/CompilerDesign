@@ -5,4 +5,4 @@ default:
 	javac *.java
 
 clean:
-		rm FuN.java *.class Yylex.java Yylex.java\~
+		rm *.java *.class Yylex.java\~
