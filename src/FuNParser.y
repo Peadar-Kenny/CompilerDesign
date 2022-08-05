@@ -95,7 +95,7 @@ exp:
 
 
 %%
-class FuNLexer implements FuN.Lexer {
+class FuNLexer implements FuNParser.Lexer {
  InputStreamReader it;
  Yylex yylex;
  public FuNLexer(InputStream is){
