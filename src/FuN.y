@@ -112,7 +112,7 @@ class FuNLexer implements FuN.Lexer {
  return yylval;
  }
  @Override
- public  yylex () throws IOException{
+ public int yylex () throws IOException{
  // Returns the next token. Here we get the next Token from the Lexer
  return yylex.yylex();
  }
