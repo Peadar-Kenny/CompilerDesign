@@ -15,7 +15,7 @@
 %code {
   public static void main(String[] args) throws IOException {
    FuNLexer lexer = new FuNLexer(System.in);
-   FuN parser = new FuN(); 
+   FuN parser = new FuN(lexer); 
    if (!parser.parse())
    System.exit(1);
   }
