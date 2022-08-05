@@ -58,7 +58,7 @@ IDENTIFIER = [A-Za-z] {CHAR}*
 CONDITIONAL = ({IF} | {THEN} | {ELSE} | {FOR} | {RETURN})
 
 %% 
-{LPAREN} {return(LPAREN)}
+LPAREN {return(LPAREN)}
 {RPAREN} {return(RPAREN)}
 {EQUAL}{return(EQUAL)}
 {TANGLE}{return(TANGLE)}
