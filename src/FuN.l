@@ -58,6 +58,7 @@ IDENTIFIER = [A-Za-z] {CHAR}*
 CONDITIONAL = ({IF} | {THEN} | {ELSE} | {FOR} | {RETURN})
 
 %%
+%%
 <YYINITIAL>{ 
 {LPAREN} {return(LPAREN)}
 {RPAREN} {return(RPAREN)}
@@ -87,6 +88,5 @@ CONDITIONAL = ({IF} | {THEN} | {ELSE} | {FOR} | {RETURN})
 
 {WS} return {}
 }
-%%
 
 int yywrap(){}
