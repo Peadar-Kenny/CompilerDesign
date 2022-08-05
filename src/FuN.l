@@ -66,30 +66,30 @@ CONDITIONAL = ({IF} | {THEN} | {ELSE} | {FOR} | {RETURN})
 %%
 
 <YYINITIAL>{ 
-{LPAREN} {return(LPAREN);}
-{RPAREN} {return(RPAREN);}
-{EQUAL} {return(EQUAL);}
-{TANGLE} {return(TANGLE);}
-{LANGLE} {return(LANGLE);}
-{RANGLE} {return(RANGLE);}
-{LANGLEEQ} {return(LANGLEEQ);}
-{RANGLEEQ} {return(RANGLEEQ);}
-{PLUS} {return(PLUS);}
-{SUB} {return(SUB);}
-{MULTIPLY} {return(MULTIPLY);}
-{DIVIDE} {return(DIVIDE);}
-{MODULO} {return(MODULO);}
-{AND} {return(AND);}
-{OR} {return(OR);}
-{FUN} {return(FUN);}
-{LET} {return(LET);}
-{REC} {return(REC);}
-{IN} {return(IN);}
-{TRUE} {return(TRUE);}
-{FALSE} {return(FALSE);}
-{NOT} {return(NOT);}
-{NUMBER} {return(NUMBER);}
-{IDENTIFIER} {return IDENTIFIER;}
+{LPAREN} {return(FuNLexer.LPAREN);}
+{RPAREN} {return(FuNLexer.RPAREN);}
+{EQUAL} {return(FuNLexer.EQUAL);}
+{TANGLE} {return(FuNLexer.TANGLE);}
+{LANGLE} {return(FuNLexer.LANGLE);}
+{RANGLE} {return(FuNLexer.RANGLE);}
+{LANGLEEQ} {return(FuNLexer.LANGLEEQ);}
+{RANGLEEQ} {return(FuNLexer.RANGLEEQ);}
+{PLUS} {return(FuNLexer.PLUS);}
+{SUB} {return(FuNLexer.SUB);}
+{MULTIPLY} {return(FuNLexer.MULTIPLY);}
+{DIVIDE} {return(FuNLexer.DIVIDE);}
+{MODULO} {return(FuNLexer.MODULO);}
+{AND} {return(FuNLexer.AND);}
+{OR} {return(FuNLexer.OR);}
+{FUN} {return(FuNLexer.FUN);}
+{LET} {return(FuNLexer.LET);}
+{REC} {return(FuNLexer.REC);}
+{IN} {return(FuNLexer.IN);}
+{TRUE} {return(FuNLexer.TRUE);}
+{FALSE} {return(FuNLexer.FALSE);}
+{NOT} {return(FuNLexer.NOT);}
+{NUMBER} {return(FuNLexer.NUMBER);}
+{IDENTIFIER} {return (FuNLexer.IDENTIFIER);}
 {COMMENT} {}
 
 {WS}  {}
