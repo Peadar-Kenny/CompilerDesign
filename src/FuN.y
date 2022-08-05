@@ -105,7 +105,7 @@ class FuNLexer implements FuN.Lexer {
  public void yyerror (String s){
  System.err.println(s);
  }
- ParserToken yylval;
+ FuN yylval;
  @Override
  public Object getLVal() {
  // Returns the semantic value of the last token that yylex returned.
