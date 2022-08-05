@@ -26,8 +26,7 @@ class Token {
 }
 
 %%
-%public
-%standalone
+
 %unicode
 %{
     StringBuffer stringbuffer = new StringBuffer()
