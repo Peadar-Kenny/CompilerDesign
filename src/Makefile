@@ -1,7 +1,7 @@
 default:
 		clear
 	jflex FuN.l
-	bison FuNParser.y -L java
+	bison FuN.y -L java
 	javac *.java
 
 clean:
