@@ -68,30 +68,30 @@ CONDITIONAL = ({IF} | {THEN} | {ELSE} | {FOR} | {RETURN})
 %%
 
 <YYINITIAL>{ 
-{LPAREN} {System.out.println((yytext()));return new Token(Yylex.LPAREN, yytext());}
-{RPAREN} {System.out.println((yytext()));return new Token(FuN.RPAREN, yytext());}
-{EQUAL} {System.out.println((yytext()));return new Token(FuN.EQUAL, yytext());}
-{TANGLE} {System.out.println((yytext()));return new Token(FuN.TANGLE, yytext());}
-{LANGLE} {System.out.println((yytext()));return new Token(FuN.LANGLE, yytext());}
-{RANGLE} {System.out.println((yytext()));return new Token(FuN.RANGLE, yytext());}
-{LANGLEEQ} {System.out.println((yytext()));return new Token(FuN.LANGLEEQ, yytext());}
-{RANGLEEQ} {System.out.println((yytext()));return new Token(FuN.RANGLEEQ, yytext());}
-{PLUS} {System.out.println((yytext()));return new Token(FuN.PLUS, yytext());}
-{SUB} {System.out.println((yytext()));return new Token(FuN.SUB, yytext());}
-{MULTIPLY} {System.out.println((yytext()));return new Token(FuN.MULTIPLY, yytext());}
-{DIVIDE} {System.out.println((yytext()));return new Token(FuN.DIVIDE, yytext());}
-{MODULO} {System.out.println((yytext()));return new Token(FuN.MODULO, yytext());}
-{AND} {System.out.println((yytext()));return new Token(FuN.AND, yytext());}
-{OR} {System.out.println((yytext()));return new Token(FuN.OR, yytext());}
-{FUN} {System.out.println((yytext()));return new Token(FuN.FUN, yytext());}
-{LET} {System.out.println((yytext()));return new Token(FuN.LET, yytext());}
-{REC} {System.out.println((yytext()));return new Token(FuN.REC, yytext());}
-{IN} {System.out.println((yytext()));return new Token(FuN.IN, yytext());}
-{TRUE} {System.out.println((yytext()));return new Token(FuN.TRUE, yytext());}
-{FALSE} {System.out.println((yytext()));return new Token(FuN.FALSE, yytext());}
-{NOT} {System.out.println((yytext()));return new Token(FuN.NOT, yytext());}
-{NUMBER} {System.out.println((yytext()));return new Token(FuN.NUMBER, yytext());}
-{IDENTIFIER} {System.out.println((yytext()));return new Token (FuN.IDENTIFIER, yytext());}
+{LPAREN} {System.out.println((yytext()));tokens.add(newToken(Yylex.LPAREN, yytext()));}
+{RPAREN} {System.out.println((yytext()));tokens.add(new Token(FuN.RPAREN, yytext()));}
+{EQUAL} {System.out.println((yytext()));tokens.add(new Token(FuN.EQUAL, yytext()));}
+{TANGLE} {System.out.println((yytext()));tokens.add(new Token(FuN.TANGLE, yytext()));}
+{LANGLE} {System.out.println((yytext()));tokens.add(new Token(FuN.LANGLE, yytext()));}
+{RANGLE} {System.out.println((yytext()));tokens.add(new Token(FuN.RANGLE, yytext()));}
+{LANGLEEQ} {System.out.println((yytext()));tokens.add(new Token(FuN.LANGLEEQ, yytext()));}
+{RANGLEEQ} {System.out.println((yytext()));tokens.add(new Token(FuN.RANGLEEQ, yytext()));}
+{PLUS} {System.out.println((yytext()));tokens.add(new Token(FuN.PLUS, yytext()));}
+{SUB} {System.out.println((yytext()));tokens.add(new Token(FuN.SUB, yytext()));}
+{MULTIPLY} {System.out.println((yytext()));tokens.add(new Token(FuN.MULTIPLY, yytext()));}
+{DIVIDE} {System.out.println((yytext()));tokens.add(new Token(FuN.DIVIDE, yytext()));}
+{MODULO} {System.out.println((yytext()));tokens.add(new Token(FuN.MODULO, yytext()));}
+{AND} {System.out.println((yytext()));tokens.add(new Token(FuN.AND, yytext()));}
+{OR} {System.out.println((yytext()));tokens.add(new Token(FuN.OR, yytext()));}
+{FUN} {System.out.println((yytext()));tokens.add(new Token(FuN.FUN, yytext()));}
+{LET} {System.out.println((yytext()));tokens.add(new Token(FuN.LET, yytext()));}
+{REC} {System.out.println((yytext()));tokens.add(new Token(FuN.REC, yytext()));}
+{IN} {System.out.println((yytext()));tokens.add(new Token(FuN.IN, yytext()));}
+{TRUE} {System.out.println((yytext()));tokens.add(new Token(FuN.TRUE, yytext()));}
+{FALSE} {System.out.println((yytext()));tokens.add(new Token(FuN.FALSE, yytext()));}
+{NOT} {System.out.println((yytext()));tokens.add(new Token(FuN.NOT, yytext()));}
+{NUMBER} {System.out.println((yytext()));tokens.add(new Token(FuN.NUMBER, yytext()));}
+{IDENTIFIER} {System.out.println((yytext()));tokens.add(new Token (FuN.IDENTIFIER, yytext()));}
 {COMMENT} {}
 
 {WS}  {}
