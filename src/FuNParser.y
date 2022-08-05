@@ -1,4 +1,5 @@
 %language "Java"
+%define api.prefix {FuN}
 %define api.parser.class { FuNParser }
 %define api.value.type { Token }
 %define api.parser.public
