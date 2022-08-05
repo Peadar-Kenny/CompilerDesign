@@ -12,7 +12,7 @@
   public static void main(String[] args) throws IOException {
    FuNParser parser = new FuNParser(); 
    if (!parser.parse())
-   System.exit(1)
+   System.exit(1);
   }
 }
 

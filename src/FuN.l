@@ -12,16 +12,16 @@ class Token {
         this.token = token;
     }
     public String toString() {
-        return String.format("%s %s", token, value)
+        return String.format("%s %s", token, value);
     }
     public Object value(){
         return this.value;
     }
     public Integer parseInt() {
-        return Integer.parseInt(this.value)
+        return Integer.parseInt(this.value);
     }
     public int tokenToInt(){
-        return this.token.ordinal()
+        return this.token.ordinal();
     }
 }
 
