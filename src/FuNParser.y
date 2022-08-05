@@ -1,5 +1,6 @@
 %language "Java"
 %define api.parser.class { FuNParser }
+%define api.value.type { Token }
 %define api.parser.public
 %define parse.error verbose
 %code imports {
